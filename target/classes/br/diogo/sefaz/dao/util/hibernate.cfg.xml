@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.url">jdbc:hsqldb:hsql://localhost:59999/sefaz</property>
+        <property name="hibernate.connection.username">SA</property>
+        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.driver_class">org.hsqldb.jdbc.JDBCDriver</property>
+    
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+    
+        <!-- Disable the second-level cache -->
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+    
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">false</property>
+        <property name="hibernate.generate_statistics">false</property>
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+        
+        <mapping class="br.diogo.sefaz.entidades.Usuario"/>
+        <mapping class="br.diogo.sefaz.entidades.Telefone"/>
+    </session-factory>
+</hibernate-configuration>
